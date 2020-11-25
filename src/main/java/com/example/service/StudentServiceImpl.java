@@ -26,8 +26,16 @@ public class StudentServiceImpl  implements StudentService
     }
 
     @Override
-    public StudentDTO updateInterest(String interest) {
-        return null;
+    public StudentDTO updateInterest(String id, String interest)
+    {
+        Student student = studentRepository.findById(id)
+                .orElseThrow(RuntimeException::new);
+
+        List<String> interests = student.getInterests();
+        interests.add(interest);
+        student.setInterests(interests);
+
+        return toDTO(student);
     }
 
     @Override

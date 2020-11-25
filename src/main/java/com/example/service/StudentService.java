@@ -8,7 +8,7 @@ public interface StudentService
 {
     StudentDTO addStudent(StudentDTO studentDTO);
 
-    StudentDTO updateInterest(String interest);
+    StudentDTO updateInterest(String id, String interest);
 
     List<StudentDTO> groupByInterests(List<String> interests);
 }

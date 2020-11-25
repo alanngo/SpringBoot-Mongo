@@ -21,4 +21,11 @@ public class StudentAPI
         StudentDTO added = studentService.addStudent(studentDTO);
         return new ResponseEntity<>(added, CREATED);
     }
+
+    @PutMapping("/student/{id}/{interest}")
+    public ResponseEntity<StudentDTO> updateInterest(@PathVariable String id, @PathVariable String interest)
+    {
+        StudentDTO student = studentService.updateInterest(id, interest);
+        return new ResponseEntity<>(student, OK);
+    }
 }
