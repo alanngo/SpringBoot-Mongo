@@ -1,0 +1,5 @@
+spring:
+  data:
+    mongodb:
+      uri:
+        mongodb+srv://springboot:springboot@cluster0.u6lhh.mongodb.net/StudentInterests?retryWrites=true&w=majority
