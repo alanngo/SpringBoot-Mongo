@@ -10,5 +10,7 @@ public interface StudentService
 
     StudentDTO updateInterest(String id, String interest);
 
+    List<StudentDTO> getStudents();
+
     List<StudentDTO> groupByInterests(List<String> interests);
 }

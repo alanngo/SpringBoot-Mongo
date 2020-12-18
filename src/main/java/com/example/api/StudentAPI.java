@@ -7,6 +7,8 @@ import static org.springframework.http.HttpStatus.*;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("")
 @CrossOrigin
@@ -14,6 +16,14 @@ public class StudentAPI
 {
     @Autowired
     private StudentService studentService;
+
+    @GetMapping("/student")
+    public ResponseEntity<List<StudentDTO>> getAll()
+    {
+        List<StudentDTO> students = studentService.getStudents();
+        return new ResponseEntity<>(students, OK);
+    }
+
 
     @PostMapping("/student")
     public ResponseEntity<StudentDTO> addStudent(@RequestBody StudentDTO studentDTO)

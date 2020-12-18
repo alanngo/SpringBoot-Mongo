@@ -2,7 +2,15 @@
 
 ## Prerequisites
 
-<a href="https://github.com/alanngo/SpringBoot/blob/master/README.md">See SpringBoot</a>
+<a href="https://github.com/alanngo/SpringBoot/blob/master/README.md#prerequisites">Click here</a>
+
+## Getting Started
+<a href="https://github.com/alanngo/SpringBoot/blob/master/README.md#getting-started">Click here</a>
+- Follow the same steps listed in the link above
+- Do NOT use MySQL dependency 
+- Replace Spring Data JPA dependency w/ Spring Data MongoDB
+- Download MongoDB: https://www.mongodb.com/try/download/enterprise
+- For online MongoDB clusters, go to: https://account.mongodb.com/account/login
 
 ## Dependencies
 
@@ -27,35 +35,15 @@
     </dependency>
 ```
 
+
 ## Important Annotations
 
 ###### API
-```java
-// Class Based
-@RestController // allows the class to have API routes
-@CrossOrigin // allows other programs to consume SpringBoot app
-@RequestMapping // root url mapping
-
-// Field Based
-@Autowired // dependency injection
-
-// Method Based
-@GetMapping("/URL") // allows a method to be called when GET request is made w/ '/URL'
-@PostMapping("/URL") // allows a method to be called when POST request is made w/ '/URL'
-@PutMapping("/URL") // allows a method to be called when PUT request is made w/ '/URL'
-@DeleteMapping("/URL") // allows a method to be called when DELETE request is made w/ '/URL'
-
-// Method Parameter Based
-@RequestBody // allows POJO to be parsed as JSON request body
-@PathVariable // used for url patterns of *./{pathVar}, method arg name must also be the same
-@QueryParam // used for url patterns of ?key=value
-```
+- <a href="https://github.com/alanngo/SpringBoot/blob/master/README.md#api">Click here</a>
 
 ###### DTO
-```java
-// Class Based
-@Data // constructor, getters, setters, equals, hashCode, toString 
-```
+- <a href="https://github.com/alanngo/SpringBoot/blob/master/README.md#dto">Click here</a>
+
 
 ###### Entity
 ```java
@@ -72,45 +60,11 @@
    - none
     
 ###### Service
-```java
-// Class Based
-@Service // denotes service layer
-@Transactional // allows the class to update DB fields
-
-// Field Based
-@Autowired // dependency injection
-```
-
+- <a href="https://github.com/alanngo/SpringBoot/blob/master/README.md#service">Click here</a>
     
 ###### Utility
+- <a href="https://github.com/alanngo/SpringBoot/blob/master/README.md#utility">Click here</a>
 
-ErrorInfo
-```java
-// Class Based
-@Data // constructor, getters, setters, equals, hashCode, toString 
-```
-
-ExceptionControllerAdvice
-```java
-// Class Based
-@RestControllerAdvice // allows the app to output errors to user in a useful manner
-
-// Field Based
-@Autowired // dependency injection
-
-// Method Based
-@ExceptionHandler(value=Exception.class) // allows method to be called when exception is raised
-```
-
-LoggingAspect
-```java
-// Class Based
-@Component // denotes spring bean
-@Aspect // used for crosscutting concern
-
-// Method Based
-@AfterThrowing(pointcut = "execution(CLASS_NAME)") // will execute after throwing exception
-```
 
 ## Repository Layer
 ```java

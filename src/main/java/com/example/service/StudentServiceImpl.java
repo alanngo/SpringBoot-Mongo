@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service("studentService")
@@ -35,6 +36,14 @@ public class StudentServiceImpl  implements StudentService
         student.setInterests(interests);
 
         return toDTO(student);
+    }
+
+    @Override
+    public List<StudentDTO> getStudents()
+    {
+        List<StudentDTO> ret = new ArrayList<>();
+        studentRepository.findAll().forEach(s -> ret.add(toDTO(s)));
+        return ret;
     }
 
     @Override
