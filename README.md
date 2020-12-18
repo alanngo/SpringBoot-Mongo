@@ -13,7 +13,7 @@
         <artifactId>spring-boot-starter-web</artifactId>
     </dependency>
 
-<!-- Causes conflict w/ Spring Data JPA    -->
+<!-- Needed to connect to MongoDB (causes conflict w/ Spring Data JPA)   -->
     <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-data-mongodb</artifactId>
@@ -110,4 +110,12 @@ LoggingAspect
 
 // Method Based
 @AfterThrowing(pointcut = "execution(CLASS_NAME)") // will execute after throwing exception
+```
+
+## Repository Layer
+```java
+public interface ExampleRepository extends MongoRepository<ENTITY, ID>
+{
+    // methods inherited from CrudRepository
+}
 ```

@@ -24,7 +24,6 @@ public class StudentServiceImpl  implements StudentService
         Student added = studentRepository.save(toEntity(studentDTO));
         return  toDTO(added);
     }
-
     @Override
     public StudentDTO updateInterest(String id, String interest)
     {
