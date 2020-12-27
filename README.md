@@ -61,7 +61,8 @@
     
 ###### Service
 - <a href="https://github.com/alanngo/SpringBoot/blob/master/README.md#service">Click here</a>
-    
+
+- ``@Transactional`` does not work w/ MongoDB. To update a document, you have to set the field and call ``save(E e)``
 ###### Utility
 - <a href="https://github.com/alanngo/SpringBoot/blob/master/README.md#utility">Click here</a>
 
@@ -70,6 +71,6 @@
 ```java
 public interface ExampleRepository extends MongoRepository<ENTITY, ID>
 {
-    // methods inherited from CrudRepository
+    // methods inherited from MongoRepository
 }
 ```
